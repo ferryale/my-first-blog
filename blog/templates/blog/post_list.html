@@ -1,25 +1,12 @@
-<html>
-	<head>
-		<title>My blog</title>
-	</head>
-	<body>
-		<div>
-			<h1>A useless blog</h1>
-		</div>
-		<br />
-		<div>
-			<h2>A useless post</h2>
-			<p>Hi there!</p>
-			<p>Fuck off!</p>
-			<p>Don't get offended, I am just fooling around with Django.</p>
-		</div>
-		{% for post in posts %}
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	{% for post in posts %}
+		<div>	
 			<br />
-			<div>
-				<p>Published: {{ post.published_date }}, Author: {{ post.author }} </p>
-				<h2>{{ post.title }}</h2>
-				<p>{{ post.text|linebreaks }}</p>
-			</div>
-		{% endfor %}		
-	</body>
-</html>
+			<p>Published: {{ post.published_date }}, Author: {{ post.author }} </p>
+			<h2><a href = "{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaks }}</p>
+		</div>
+	{% endfor %}
+{% endblock %}		
