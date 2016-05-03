@@ -7,16 +7,21 @@
 			<h1 align="center">A useless blog</h1>
 			<h3 align="center">
 				<a href = "{% url 'post_list' %}">Home</a>
-				<a href = "{% url 'post_draft_list' %}">Unpublished posts</a>
-				{% if user.is_authenticated %}
-				<a href = "{% url 'post_new' %}">Add a new post</a>
-				{% else %}
-				<a href = "{% url 'django.contrib.auth.views.login' %}">Login</a>
-				{% endif %}
+				<a href = "{% url 'post_draft_list' %}">Drafts</a>
 			</h3>
 			{% if user.is_authenticated %}
 		        <p align="right">Hello {{ user.username }} (<a href = "{% url 'django.contrib.auth.views.logout' %}">Logout</a>)</p>
 		        {% endif %}
+			<h3 align="right">
+				{% if user.is_authenticated %}
+				<a href = "{% url 'post_new' %}">Add a new post</a>
+				<a href = "{% url 'auth_password_change' %}">Change password</a>
+				{% else %}
+				<a href = "{% url 'registration_register' %}">Register</a>
+				<a href = "{% url 'django.contrib.auth.views.login' %}">Login</a>
+				{% endif %}
+			</h3>
+		
 		</div>
 		{% block content %}
 		{% endblock %}	

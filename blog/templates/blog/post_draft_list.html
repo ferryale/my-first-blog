@@ -5,7 +5,7 @@
 		<div>	
 			<br />
 			<p>Created: {{ post.created_date }}, Author: {{ post.author }} </p>
-			<h2><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 			<p>{{ post.text }}</p>
 		</div>
 	{% endfor %}
