@@ -6,7 +6,7 @@
 			<br />
 			<p>Created: {{ post.created_date }}, Author: {{ post.author }} </p>
 			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-			<p>{{ post.text }}</p>
+			<p>{{ post.text|linebreaks }}</p>
 		</div>
 	{% endfor %}
 {% endblock %}		
