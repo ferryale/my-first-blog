@@ -1,6 +1,7 @@
 *.pyc
 __pycache__
 myenv
+media
 db.sqlite3
 /static
 .DS_Store

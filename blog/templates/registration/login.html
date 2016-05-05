@@ -1,7 +1,9 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
+<br />
+<hr>
+<h2>Login</h2>
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again</p>
 {% endif %}
@@ -18,7 +20,6 @@
 		<td>{{ form.password }}</td>
 	</tr>
 </table>
-
 <input type="submit" value="Login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>

@@ -3,6 +3,7 @@
 {% block content %}
 	<div>	
 		<br />
+		<hr>
 		<p>
 			{% if post.published_date %}
 			<a>Published: {{ post.published_date }} </a>	
@@ -19,25 +20,26 @@
 		<h4>Author: {{ post.author }} </h4>	
 		<h2>{{ post.title }}</h2>
 		<p>{{ post.text|linebreaks }}</p>
-		<hr>
 		<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+		<br />
+		<br />
 		{% for comment in post.comments.all %}
 			{% if user.is_authenticated or comment.approved_comment %}
 		    		<div class="comment">
-		    			<br />
+		    			<hr>
 		    			<div class="date">
-						<p>{{ comment.created_date }}</p>
+						<a>{{ comment.created_date }}</a>
 						{% if not comment.approved_comment %}
+						<a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Approve</a>
                 				<a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">Remove</a>
-                				<a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Approve</a>
             					{% endif %}
 					</div>
-					<strong>{{ comment.author }}</strong>
+					<h3>{{ comment.author }}</h3>
 					<p>{{ comment.text|linebreaks }}</p>
 		    		</div>
 		    	{% endif %}
-		    		
 			{% empty %}
+				<hr>
 	    			<p>No comments yet.</p>
 			{% endfor %}	
 	</div>

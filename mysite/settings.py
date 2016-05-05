@@ -128,3 +128,7 @@ LOGIN_REDIRECT_URL = '/'
 
 # Register
 REGISTRATION_AUTO_LOGIN = True # Automatically logs the user in
+
+# File uploads
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

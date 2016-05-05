@@ -35,3 +35,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+        
+class Document(models.Model):
+    author = models.CharField(max_length = 200)
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+    published_date = models.DateTimeField(blank = True, null = True)
+    
+    
