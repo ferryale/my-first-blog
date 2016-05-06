@@ -1,15 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+	<h1>Document list</h1>
 	<br />
-	<hr>
-	<h2>Document list</h2>
         {% if documents %}
             <ul>
                 {% for document in documents %}
-                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a><a> Uploaded by {{ document.author }} on {{ document.published_date }} </a>
+                    <li><p><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a> 
+                    Uploaded by {{ document.author }} on {{ document.published_date }}
                     {% if user.is_authenticated %}
-				<a class="btn btn default" href="{% url 'document_remove' pk=document.pk %}">Remove</a>
+				<a class="btn btn-default" href="{% url 'document_remove' pk=document.pk %}">Remove</a></p>
 		    {% endif %}
                     </li>
                 {% endfor %}

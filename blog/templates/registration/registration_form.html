@@ -1,13 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<h1>Register your account</h1>
 <br />
-<hr>
-<h2>Register your account</h2>
 	<form method="post" class="form">
 	    {% csrf_token %}
 	    {{ form.as_p }}
-	    <input type="submit" value="Submit" />
+	    <button type="submit" class=" btn btn-default">Submit</button>
 	</form>
 {% endblock %}
 

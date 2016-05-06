@@ -1,13 +1,17 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	<br />
 	{% for post in posts %}
-		<div>	
-			<hr>
-			<p>Created: {{ post.created_date }}, Author: {{ post.author }} </p>
-			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-			<p>{{ post.text|linebreaks }}</p>
+		<div class="post">
+		    <div class="date">	
+			    <p>Created: {{ post.created_date }}, Author: {{ post.author }} </p>
+			</div>
+			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+			<div class="text">
+			    <p>{{ post.text|linebreaks }}</p>
+			</div>
 		</div>
+	{% empty %}
+		<div class="post"><h3>No drafts.</h3></div>
 	{% endfor %}
 {% endblock %}		

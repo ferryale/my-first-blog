@@ -1,33 +1,51 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
 <html>
 	<head>
 		<title>My blog</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 	</head>
 	<body>
-		<div>
-			<h1 align="center">
-				<a href = "{% url 'information' %}">A useless blog</a>
-			</h1>
-			<h3 align="center">
+
+		<div class="page-header" align="center">
+			<h1><a href = "{% url 'information' %}">A useless blog</a></h1>
+			<h3>
 				<a href = "{% url 'post_draft_list' %}">Drafts</a>
 				<a href = "{% url 'post_list' %}">Posts</a>
 				<a href = "{% url 'document_list' %}">Documents</a>
 			</h3>
-			{% if user.is_authenticated %}
-		        <p align="right">Hello {{ user.username }} (<a href = "{% url 'django.contrib.auth.views.logout' %}">Logout</a>)</p>
-		        {% endif %}
-			<h4 align="right">
-				{% if user.is_authenticated %}
-				<a href = "{% url 'post_new' %}">Add post</a>
-				<a href = "{% url 'document_upload' %}">Add document</a>
-				<a href = "{% url 'auth_password_change' %}">Change password</a>
-				{% else %}
-				<a href = "{% url 'registration_register' %}">Register</a>
-				<a href = "{% url 'django.contrib.auth.views.login' %}">Login</a>
-				{% endif %}
-			</h4>
-		
 		</div>
-		{% block content %}
-		{% endblock %}	
+	    <div>
+	        <div class="body" align="right">
+				{% if user.is_authenticated %}
+					<div class="date"><p>Hello {{ user.username }} </p></div>
+					<p>	
+					<a class="btn btn-default" href = "{% url 'auth_password_change' %}">Change password</a>
+					<a class="btn btn-default" href = "{% url 'django.contrib.auth.views.logout' %}"> Logout</a>
+					</p>
+				{% endif %}
+				{% if user.is_authenticated %}
+					<a class="btn btn-default" href = "{% url 'post_new' %}">Add post</a>
+					<a class="btn btn-default" href = "{% url 'document_upload' %}">Add document</a>
+				{% else %}
+					<a class="btn btn-default" href = "{% url 'registration_register' %}">Register</a>
+					<a class="btn btn-default" href = "{% url 'django.contrib.auth.views.login' %}">Login</a>
+				{% endif %}		 
+		    </div>  
+		</div>  
+		     
+			<div class="body">
+				<div class="content">
+					<div class="row">
+		       			<div class="col-md-8">
+			{% block content %}
+			{% endblock %}	
+						</div>
+					</div>
+				</div>
+			</div>
 	</body>
 </html>
