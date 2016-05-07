@@ -1,13 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	<h1>Document list</h1>
+	<h1 style="color:#034F84">Document list</h1>
 	<br />
         {% if documents %}
             <ul>
                 {% for document in documents %}
-                    <li><p><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a> 
-                    Uploaded by {{ document.author }} on {{ document.published_date }}
+                    <li><p><a style="color:#034F84" href="{{ document.docfile.url }}">{{ document.docfile.name }}</a>&nbsp; 
+                    Uploaded on {{ document.published_date }} by {{ document.author }}&nbsp;
                     {% if user.is_authenticated %}
 				<a class="btn btn-default" href="{% url 'document_remove' pk=document.pk %}">Remove</a></p>
 		    {% endif %}

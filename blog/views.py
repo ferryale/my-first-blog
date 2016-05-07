@@ -104,7 +104,7 @@ def comment_remove(request, pk):
  
 def document_list(request):
     # Load documents for the list page
-    documents = Document.objects.all()
+    documents = Document.objects.all().order_by('-published_date')
 
     # Render list page with the documents and the form
     return render(request, 'blog/document_list.html',{'documents': documents})
@@ -122,7 +122,7 @@ def document_upload(request):
     else:
         form = DocumentForm()  # A empty, unbound form
 
-    documents = Document.objects.all()
+    documents = Document.objects.all().order_by('-published_date')
     # Render list page with the documents and the form
     return render(request, 'blog/document_upload.html',{'documents': documents,'form': form})
     

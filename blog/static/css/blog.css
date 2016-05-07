@@ -18,7 +18,7 @@
 .body {
     background-color: #ffffff;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+	padding: 20px 20px 20px 40px;
 }
 
 .content {
@@ -29,19 +29,19 @@
     margin: 30px 0px 20px 20px;
 }
 
-h1, h2, h3, h4, a, p {
-    font-family: 'Futura';
-    color: #000000;
-}
-
-.date p, a{
+.date p, a {
     color: #034F84;
 }
 
 
+h1, h2, h3, h4, a, p {
+    font-family: 'Lobster';
+    color: #000000;
+}
+
 .text p{
       color: #000000;
-      font-family: 'Futura';
+      font-family: 'Lobster';
 }
 
 .save {
@@ -67,4 +67,5 @@ h1, h2, h3, h4, a, p {
 
 hr {
 	border-color: #000000;
+	 margin: 30px auto;
 }
