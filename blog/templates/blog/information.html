@@ -3,7 +3,7 @@
 {% block content %}
 	<h1 style="color:#034F84">Welcome to the <em>bottom-it-up</em> discussion board!</h1>
 	<br />
-	<h4>This platform has been created to engage students, researchers and professors in discussions aimed at a <em>bottom-up</em> research collaboration. The ultimate goal is to create a highly-dynamic, non-hierarchical environment of researchers acting as a glue between universities, research centers and emerging technology start-ups. </h4>
+	<h4>This platform has been created to engage students, researchers and professors in discussions aimed at a <em>bottom-up</em> research collaboration. The ultimate goal is to create a highly-dynamic, non-hierarchical environment of researchers acting as a glue between universities, research centers and emerging technology start-ups. </h4>	
 	<h3 style="color:#034F84">Cross-discipline communication</h3>
 	<p>Research contributes to evolution by improving the living standards inside our society with relation. Health-care, green-energy harvesting, transport, security and communications are the target of many research activities performed by scientists with different backgrounds. In order for these efforts to be converted in technologies having a significant impact on the society, it is crucial to combine knowledge from different scientific domains. <br />
 	Scientists talking different languages need to learn to communicate and understand each other. This is the first and most significant step towards a cross-discipline research collaboration.</p> 
@@ -15,9 +15,5 @@
 	Many research activities are financed by governments through grants originating from citizen taxes. In return for their financial contributions, citizens would like to have access to the fruits of research in the form of technologies improving their life quality. Unfortunately, when a research area becomes promising enough to give birth to a useful technology, private investors immediately put their hands on it. They hire the scientists contributing to publicly-financed innovation, protect the sensitive information with copyright and sell the resulting technology for profit. <br />
 	 Anyone who believes that scientific knowledge should be free and accessible to anyone is welcome on this platform. Proposals for leading research on a open-source innovation path - free from patents, licenses and copyrights - are strongly encouraged. </p>
 	 <h4>There must be a way to generate social value and wealth in a transparent way.  <br /> If there is a way, communication and collaboration are the way! </h4>
-	 {% if not user.is_authenticated %}
-        <hr>
-	<h3 style="color:#034F84"><a class="btn btn-default" href = "{% url 'registration_register' %}">Register</a> to start discussing and uploading documents!</h3>
-	{% endif %}
-	
+
 {% endblock %}	

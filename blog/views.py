@@ -24,6 +24,9 @@ def authorization_error(request):
 def information(request):
 	return render(request, 'blog/information.html')
 	
+def tutorial(request):
+	return render(request, 'blog/tutorial.html')
+	
 @login_required	
 def post_new(request):
 	if request.method == "POST":

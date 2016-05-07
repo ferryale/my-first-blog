@@ -3,7 +3,7 @@
 {% load staticfiles %}
 <html>
 	<head>
-		<title>My blog</title>
+		<title>Bottom it up</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -21,7 +21,7 @@
 	    <div>
 	        <div class="body" align="right">
 				{% if user.is_authenticated %}
-					<div class="date"><h4 style="color: #034F84">Hello {{ user.username }} </h4></div>
+					<div class="date"><h4><a  style="color:#034F84" href = "{% url 'tutorial' %}">Hello {{ user.username }} </h4></div>
 					<p>	
 					<a class="btn btn-default" href = "{% url 'auth_password_change' %}">Change password</a>&nbsp;
 					<a class="btn btn-default" href = "{% url 'django.contrib.auth.views.logout' %}"> Logout</a>
@@ -31,9 +31,10 @@
 					<a class="btn btn-default" href = "{% url 'post_new' %}">Add post</a>&nbsp;
 					<a class="btn btn-default" href = "{% url 'document_upload' %}">Add document</a>
 				{% else %}
+				    <h4 align="right"><a  style="color:#034F84" href = "{% url 'tutorial' %}">How to use this platform</a></h4>	
 					<a class="btn btn-default" href = "{% url 'registration_register' %}">Register</a>&nbsp;
 					<a class="btn btn-default" href = "{% url 'django.contrib.auth.views.login' %}">Login</a>
-				{% endif %}		 
+				{% endif %}
 		    </div>  
 		</div>  
 		     

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+       <h1 style="color:#034F84"><a style="color:#034F84" href = "{% url 'information' %}">Bottom it up</a></h1>
+       <p>All page visitors can view discussions and documents by clicking on <a style="color:#034F84" href = "{% url 'post_draft_list' %}">Drafts</a>, <a style="color:#034F84" href = "{% url 'post_list' %}">Posts</a> and <a style="color:#034F84" href = "{% url 'document_list' %}">Documents</a> on the page header. <br />
+       Login is required to add a post or a document.
+       Click on <a style="color:#034F84" href = "{% url 'information' %}">Bottom it up</a> on the page header to return to the home page. </p>
+	<h3 style="color:#034F84"><a style="color:#034F84" href = "{% url 'post_list' %}">Posts</a> and <a style="color:#034F84" href = "{% url 'post_draft_list' %}">drafts</a></h3>
+	<p>New posts will be saved in <a style="color:#034F84" href = "{% url 'post_draft_list' %}">Drafts</a>, and you will be redirected to a page showing the post details. Hit the <em>Publish</em> button to have your post published in <a style="color:#034F84" href = "{% url 'post_list' %}">Posts</a>. In <a style="color:#034F84" href = "{% url 'post_draft_list' %}">Drafts</a> and <a style="color:#034F84" href = "{% url 'post_list' %}">Posts</a>, click on the post title to be redirected to the post details. From there, you can publish/edit/remove your own posts and add/moderate comments.</p>
+	<h4 style="color:#034F84">Comments</h4>
+	<p>Comments can be posted by anyone without being logged in. However, a comment needs to be approved by a logged-in user to have it displayed in the post detail. Approved comments can only be removed by the admin.</ p>
+	<h3 style="color:#034F84"><a style="color:#034F84" href = "{% url 'document_list' %}">Documents</a></h3>
+	<p>All uploaded documents are listed in <a style="color:#034F84" href = "{% url 'document_list' %}">Documents</a>. Login is not required to view/download document files. Logged-in users can add/delete their own documents.</p>
+{% endblock %}		
+
+
