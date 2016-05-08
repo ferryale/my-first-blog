@@ -50,7 +50,6 @@ def post_edit(request, pk):
 				post = form.save(commit = False)
 				post.author = request.user
 				post.created_date = timezone.now()
-				post.published_date = None
 				post.save()
 				return redirect('post_detail', pk = post.pk)		
 		else:

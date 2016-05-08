@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(te1*x0q97t&=kx17hvw0o5u=4omwjx1#66rcu+uqtr(_q7fj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['wannashape.pythonanywhere.com', '*']
 

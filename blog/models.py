@@ -41,4 +41,7 @@ class Document(models.Model):
     docfile = models.FileField(upload_to='documents/%Y/%m/%d')
     published_date = models.DateTimeField(blank = True, null = True)
     
+    def __str__(self):
+        return self.docfile.name
+    
     
